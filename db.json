@@ -1,0 +1,31 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "name": "Ana",
+      "auther": "Maksim Gorki",
+      "publisher": "Can yayinlari",
+      "isbn": "123123123",
+      "price": 123,
+      "catId": "1"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Roman"
+    },
+    {
+      "id": "2",
+      "name": "Siir"
+    },
+    {
+      "id": "3",
+      "name": "Deneme"
+    },
+    {
+      "id": "4",
+      "name": "Hikaye"
+    }
+  ]
+}

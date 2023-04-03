@@ -1,0 +1,34 @@
+JSON SERVER kur:
+    npm install json-server
+
+AXIOS kur:
+    npm install axios
+
+REACT ROUTER DOM kur:
+    npm install react-router-dom
+
+REDUX VE REACT-REDUX kur:
+    npm install redux
+    npm install react-redux
+
+
+IS SIRASI:
+    1-json server yapisini kur:
+        db.json dosyasi ac.
+    2-Global axios dosyasi olustur:
+        api folder
+        api.js =>(base url olustur)
+        urls.js =>(endpointler olustur)
+
+    3- REDUX yapisi olustur
+        -store'a tasinacak state'ler belirlenir 
+        -redux isimli klasor olustur
+        -redux'in icine reducers ve actions klasorleri ve store dosyasi olustur
+        -actions icine actionTypes dosyasi ve icine gelecek actionTypes'lari yaz
+        -reducers icine her action icin ayri reducer dosyasi olustur ve reducerlari yaz
+        -yazilan rducerslari store'a tanit
+        -store index.js icine tanitilir
+
+    4- ROUTER yapisi olustur
+        -app.js icine router yapisini kur
+        

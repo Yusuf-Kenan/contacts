@@ -60,11 +60,25 @@ const booksReducer = (state = initialState, action) => {
         error: action.payload,
       };
 
-      case actionTypes.bookActions.ADD_BOOK:
-        return{
-          ...state,
-          books:[...state.books, action.payload]
+    case actionTypes.bookActions.ADD_BOOK:
+      return {
+        ...state,
+        books: [...state.books, action.payload],
+      };
+
+    case actionTypes.bookActions.EDIT_BOOK:
+      let temp = [];
+      for (let i = 0; i < state.books.length; i++) {
+        if (state.books[i].id !== action.payload.id) {
+          temp.push(state.books[i]);
+        } else {
+          temp.push(action.payload);
         }
+      }
+      return {
+        ...state,
+        books: temp,
+      };
 
     default:
       return state;

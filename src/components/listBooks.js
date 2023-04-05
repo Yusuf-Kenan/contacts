@@ -78,9 +78,9 @@ export default function ListBooks() {
                     >
                       Del
                     </button>
-                    <button type="button" className="btn btn-warning btn-sm">
+                    <Link to={`book-edit/${book.id}`} type="button" className="btn btn-warning btn-sm">
                       Edit
-                    </button>
+                    </Link>
                     <Link to={`book-detail/${book.id}`} type="button" className="btn btn-info btn-sm">
                       Dtls
                     </Link>

@@ -1,55 +1,56 @@
-import React, { useState } from "react";
-import Header from "../components/header";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React,{useState} from 'react'
+import Header from '../components/header'
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams , useNavigate} from "react-router-dom";
 import urls from "../api/urls";
 import api from "../api/api";
-import actionTypes from "../redux/actions/actionTypes";
+import actionTypes from '../redux/actions/actionTypes';
 
-export default function AddBook() {
+
+
+export default function BookEdit() {
     const navi=useNavigate()
-  const dispatch = useDispatch();
-  const { categoriesState } = useSelector((state) => state);
+    const dispatch=useDispatch()
+    const params = useParams();
 
-  const [form, setForm] = useState({
-    id: String(new Date().getTime()),
-    name: "",
-    auther: "",
-    publisher: "",
-    isbn: "",
-    price: "",
-    catId: categoriesState.categories[0].id,
-  });
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(form);
-    //validation
+    const{bookState, categoriesState}=useSelector(state=>state)
+   
+    const myBook=bookState.books.find(book=>book.id===params.bookId)
+    console.log(myBook)
+
+    const [form, setForm]=useState(myBook)
+
+    const handleSubmit=(event)=>{
+        event.preventDefault()
+        //validation
     if (form.name === "" || form.author === "" || form.catId === "") {
-      alert("Please insert all fields");
-      return;
-    }
-    if (form.name.length < 2) {
-      alert("Book name must be more the 2 letters");
-      return;
-    }
+        alert("Please insert all fields");
+        return;
+      }
+      if (form.name.length < 2) {
+        alert("Book name must be more the 2 letters");
+        return;
+      }
 
-    //post api req and dispatch
 
-    api
-      .post(urls.books, form)
+      api
+      .put(`${urls.books}/${params.bookId}`, form)
       .then((res) => {
         dispatch({
-          type: actionTypes.bookActions.ADD_BOOK,
+          type: actionTypes.bookActions.EDIT_BOOK,
           payload: form,
         });
         navi("/")
       })
       .catch((err) => {});
-  };
+
+
+    }
 
   return (
     <div>
-      <Header />
+      <Header/>
+      
       <div className="container">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -135,7 +136,7 @@ export default function AddBook() {
           <div className="input-group">
             <label className="input-group-text">Categoris</label>
             <select
-           //defaultValue={categoriesState.categories[0].id}
+            defaultValue={categoriesState.categories[0].id}
               className="form-select"
               value={form.catId}
               onChange={(event) =>
@@ -158,5 +159,5 @@ export default function AddBook() {
         </form>
       </div>
     </div>
-  );
+  )
 }

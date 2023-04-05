@@ -1,21 +1,30 @@
 {
   "books": [
     {
-      "id": "1",
+      "id": "2",
       "name": "Ana",
-      "auther": "Maksim Gorki",
-      "publisher": "Can Yayinlari",
-      "isbn": "123123123",
-      "price": 123,
-      "catId": "1"
+      "auther": "Gorki",
+      "publisher": "KFRBK",
+      "isbn": "983456789",
+      "price": 98,
+      "catId": "4"
     },
     {
-      "id": "2",
-      "name": "Ekmek Param",
-      "auther": "Maksim Gorki",
-      "publisher": "Can Yayinlari",
-      "isbn": "123123111",
-      "price": 120,
+      "id": "1680716701305",
+      "name": "Capital",
+      "auther": "Karl Marx",
+      "publisher": "kfrbk",
+      "isbn": "56782345678",
+      "price": 99,
+      "catId": "4"
+    },
+    {
+      "id": "1680717791129",
+      "name": "Germinal",
+      "auther": "Emil Zola",
+      "publisher": "Can",
+      "isbn": "6789345678",
+      "price": 121,
       "catId": "1"
     }
   ],

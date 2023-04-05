@@ -7,8 +7,10 @@ const actionTypes={
         DELETE_BOOK_START:"DELETE_BOOK_START",
         DELETE_BOOK_SUCCESS:"DELETE_BOOK_SUCCESS",
         DELETE_BOOK_FAIL:"DELETE_BOOK_FAIL",
-        //
+        //ADD ACTION
         ADD_BOOK:"ADD_BOOK",
+        //EDIT ACTION
+        EDIT_BOOK:"EDIT_BOOK"
 
     },
     categoryActions:{

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import api from "../api/api";
@@ -9,9 +9,18 @@ import ConfirmComp from "./confirm_comp";
 export default function ListBooks() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [deleteId, setDeleteId] = useState("");
-
+  const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
   const { bookState, categoriesState } = useSelector((state) => state);
+  const [filteredBook, setFilteredBook] = useState(bookState.books);
+
+
+  useEffect(()=>{
+const temp=bookState.books.filter(book=>book.name.toLowerCase().includes(searchText.toLowerCase()) || book.auther.toLowerCase().includes(searchText.toLowerCase()))
+setFilteredBook(temp)
+  },[searchText])
+
+  
 
   const deleteBook = (id) => {
     dispatch({ type: actionTypes.bookActions.DELETE_BOOK_START });
@@ -32,8 +41,13 @@ export default function ListBooks() {
   };
 
   return (
-    <>
-    <div className="d-flex justify-content-end"><Link className="p-3" to={"/add"}>Add Book</Link></div>
+    <div className="container my-5">
+      <div className=" d-flex justify-content-between">
+      <input className="form-control-sm" type="text" placeholder="Search" value={searchText} onChange={(event)=>setSearchText(event.target.value)}/>
+        <Link className="p-3" to={"/add"}>
+          Add Book
+        </Link>
+      </div>
       <table className="table table-striped my-5">
         <thead>
           <tr>
@@ -45,7 +59,7 @@ export default function ListBooks() {
           </tr>
         </thead>
         <tbody>
-          {bookState.books.map((book, index) => {
+          {filteredBook.map((book, index) => {
             // let myCat = null;
             // for(let i=0;i<categoriesState.categories.length;i++){
             //     if(categoriesState.categories[i].id===book.catId){
@@ -78,10 +92,18 @@ export default function ListBooks() {
                     >
                       Del
                     </button>
-                    <Link to={`book-edit/${book.id}`} type="button" className="btn btn-warning btn-sm">
+                    <Link
+                      to={`book-edit/${book.id}`}
+                      type="button"
+                      className="btn btn-warning btn-sm"
+                    >
                       Edit
                     </Link>
-                    <Link to={`book-detail/${book.id}`} type="button" className="btn btn-info btn-sm">
+                    <Link
+                      to={`book-detail/${book.id}`}
+                      type="button"
+                      className="btn btn-info btn-sm"
+                    >
                       Dtls
                     </Link>
                   </div>
@@ -102,6 +124,6 @@ export default function ListBooks() {
           }}
         />
       )}
-    </>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import api from "../api/api";
 import urls from "../api/urls";
 import actionTypes from "../redux/actions/actionTypes";
@@ -32,6 +33,7 @@ export default function ListBooks() {
 
   return (
     <>
+    <div className="d-flex justify-content-end"><Link className="p-3" to={"/add"}>Add Book</Link></div>
       <table className="table table-striped my-5">
         <thead>
           <tr>
@@ -55,7 +57,7 @@ export default function ListBooks() {
             );
 
             return (
-              <tr key={book.index}>
+              <tr key={book.id}>
                 <th scope="row">{index + 1}</th>
                 <td>{book.name}</td>
                 <td>{book.auther}</td>
@@ -79,9 +81,9 @@ export default function ListBooks() {
                     <button type="button" className="btn btn-warning btn-sm">
                       Edit
                     </button>
-                    <button type="button" className="btn btn-info btn-sm">
+                    <Link to={`book-detail/${book.id}`} type="button" className="btn btn-info btn-sm">
                       Dtls
-                    </button>
+                    </Link>
                   </div>
                 </td>
               </tr>

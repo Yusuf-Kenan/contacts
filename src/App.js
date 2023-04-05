@@ -6,9 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 import HomePage from "./pages/home_page";
+import Error from "./pages/Error";
 import api from "./api/api";
 import urls from "./api/urls";
 import actionTypes from "./redux/actions/actionTypes";
+import BookDetail from "./pages/BookDetail";
+import AddBook from "./pages/AddBook";
 
 function App() {
 
@@ -50,6 +53,9 @@ if(bookState===false || categoriesState.success === false)return null;
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage/>} />
+        <Route path="/book-detail/:bookId" element={<BookDetail/>}/>
+        <Route path="/add" element={<AddBook/>} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );

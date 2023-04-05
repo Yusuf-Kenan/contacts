@@ -4,28 +4,37 @@
       "id": "1",
       "name": "Ana",
       "auther": "Maksim Gorki",
-      "publisher": "Can yayinlari",
+      "publisher": "Can Yayinlari",
       "isbn": "123123123",
       "price": 123,
+      "catId": "1"
+    },
+    {
+      "id": "2",
+      "name": "Ekmek Param",
+      "auther": "Maksim Gorki",
+      "publisher": "Can Yayinlari",
+      "isbn": "123123111",
+      "price": 120,
       "catId": "1"
     }
   ],
   "categories": [
     {
       "id": "1",
-      "name": "Roman"
+      "name": "Novel"
     },
     {
       "id": "2",
-      "name": "Siir"
+      "name": "Poem"
     },
     {
       "id": "3",
-      "name": "Deneme"
+      "name": "Bio"
     },
     {
       "id": "4",
-      "name": "Hikaye"
+      "name": "Story"
     }
   ]
 }

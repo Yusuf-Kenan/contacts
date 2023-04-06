@@ -1,5 +1,5 @@
 const urls={
-    books:"/books",
+    persons:"/persons",
     categories:"/categories"
 }
 

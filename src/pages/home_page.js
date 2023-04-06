@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/header";
-import ListBooks from "../components/listBooks";
+import Listpersons from "../components/listPersons";
 
 export default function HomePage() {
 
@@ -8,7 +8,7 @@ export default function HomePage() {
   return ( 
     <div>
       <Header />
-      <ListBooks />
+      <Listpersons />
     </div>
   );
 }

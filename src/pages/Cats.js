@@ -11,10 +11,10 @@ export default function Cats() {
   const dispatch = useDispatch();
   const [showConfirm, setShowConfirm] = useState(false);
   const [deleteId, setDeleteId] = useState("");
-  const { categoriesState, bookState } = useSelector((state) => state);
+  const { categoriesState, personState } = useSelector((state) => state);
 
   const deleteCat = (id) => {
-    dispatch({ type: actionTypes.bookActions.DELETE_BOOK_START });
+    dispatch({ type: actionTypes.personActions.DELETE_PERSON_START });
     api
       .delete(`${urls.categories}/${id}`)
       .then((res) => {
@@ -58,14 +58,14 @@ export default function Cats() {
             {categoriesState.categories.length > 0 && (
               <>
                 {categoriesState.categories.map((cat, index) => {
-                  const books = bookState.books.filter(
-                    (book) => book.catId === cat.id
+                  const persons = personState.persons.filter(
+                    (person) => person.catId === cat.id
                   );
                   return (
                     <tr key={cat.id}>
                       <th scope="row">{index + 1}</th>
                       <td>{cat.name}</td>
-                      <td>{books.length}</td>
+                      <td>{persons.length}</td>
                       <td>
                         <div className="btn-group" role="group">
                           <button

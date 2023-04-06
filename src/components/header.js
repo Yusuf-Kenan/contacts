@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-sm navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-sm navbar-dark bg-success">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <h1>Library</h1>
+            <h1>Contacts</h1>
           </Link>
 
           <button
@@ -25,12 +25,12 @@ export default function Header() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link active" to="/">
-                  Books
+                  Contacts
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" to="/cats">
-                  Cats
+                  Memnber of
                 </Link>
               </li>
             </ul>

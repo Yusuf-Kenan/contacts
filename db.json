@@ -1,58 +1,49 @@
 {
-  "books": [
+  "persons": [
     {
-      "id": "1680716701305",
-      "name": "Capital",
-      "auther": "Karl Marx",
-      "publisher": "KFRBK",
-      "isbn": "56782345678",
-      "price": 99,
-      "catId": "1680787360320"
-    },
-    {
-      "id": "1680717791129",
-      "name": "Germinal",
-      "auther": "Emil Zola",
-      "publisher": "Can",
-      "isbn": "6789345678",
-      "price": 121,
-      "catId": "1680787303181"
-    },
-    {
-      "id": "1680787556301",
-      "name": "Ana",
-      "auther": "Maksim Gorki",
-      "publisher": "Can ",
-      "isbn": "4567890",
-      "price": 98,
-      "catId": "1680787366253"
-    },
-    {
-      "id": "1680787608330",
-      "name": "Seyh Bedrettin",
-      "auther": "Nazim Hikmet",
-      "publisher": "YKY",
-      "isbn": "0987654567890",
-      "price": 121,
+      "id": "1680801697321",
+      "name": "Kader",
+      "phone": "05555675643",
+      "email": "aaaa",
+      "birthplace": "23456789",
+      "birthyear": 234567,
       "catId": "1680787297189"
+    },
+    {
+      "id": "1680803725401",
+      "name": "Yusuf Kenan",
+      "phone": "05555675643",
+      "email": "yusuf@kenan.com",
+      "birthplace": "Turkey",
+      "birthyear": 1983,
+      "catId": "1680801665849"
+    },
+    {
+      "id": "1680803838823",
+      "name": "Ali Tektas",
+      "phone": "05555675432",
+      "email": "ali@tektas.com",
+      "birthplace": "Turkey",
+      "birthyear": 1987,
+      "catId": "1680801621358"
     }
   ],
   "categories": [
     {
       "id": "1680787297189",
-      "name": "Poem"
+      "name": "Body"
     },
     {
-      "id": "1680787303181",
-      "name": "Novel"
+      "id": "1680801613956",
+      "name": "Family"
     },
     {
-      "id": "1680787360320",
-      "name": "Assey"
+      "id": "1680801621358",
+      "name": "Friends"
     },
     {
-      "id": "1680787366253",
-      "name": "Story"
+      "id": "1680801665849",
+      "name": "Business"
     }
   ]
 }

@@ -15,7 +15,7 @@ export default function CatEdit() {
   const myCat = categoriesState.categories.find(
     (cat) => cat.id === params.catId
   );
-  console.log(myCat);
+ 
   const [form, setForm] = useState(myCat);
 
   const handleSubmit = (event) => {

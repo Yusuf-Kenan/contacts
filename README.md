@@ -1,4 +1,4 @@
-<h1>ROUTER USE</h1>
+<h1>REDUX USE</h1>
 
 This app created to understand the idea Redux, LifeCycle, axios and  hooks on React.js. Practicing that makes me one step further any day ... 
 

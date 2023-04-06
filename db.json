@@ -1,15 +1,6 @@
 {
   "books": [
     {
-      "id": "2",
-      "name": "Ana",
-      "auther": "Gorki",
-      "publisher": "KFRBK",
-      "isbn": "983456789",
-      "price": 98,
-      "catId": "4"
-    },
-    {
       "id": "1680716701305",
       "name": "Capital",
       "auther": "Karl Marx",
@@ -31,27 +22,11 @@
   "categories": [
     {
       "id": "1",
-      "name": "Novel"
-    },
-    {
-      "id": "2",
-      "name": "Poem"
-    },
-    {
-      "id": "3",
-      "name": "Bio"
+      "name": "Assey"
     },
     {
       "id": "4",
       "name": "Story"
-    },
-    {
-      "id": "1680775744687",
-      "name": "Pulp Fiction"
-    },
-    {
-      "id": "1680779081169",
-      "name": "Assey"
     }
   ]
 }

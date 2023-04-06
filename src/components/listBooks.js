@@ -67,12 +67,6 @@ export default function ListBooks() {
         </thead>
         <tbody>
           {filteredBook.map((book, index) => {
-            // let myCat = null;
-            // for(let i=0;i<categoriesState.categories.length;i++){
-            //     if(categoriesState.categories[i].id===book.catId){
-            //         myCat=categoriesState.categories[i]
-            //     }
-            // }
             const theCat = categoriesState.categories.find(
               (item) => item.id === book.catId
             );

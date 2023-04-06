@@ -15,6 +15,7 @@ import AddBook from "./pages/AddBook";
 import BookEdit from "./pages/BookEdit";
 import Cats from "./pages/Cats";
 import AddCat from "./pages/AddCat";
+import CatEdit from "./pages/CatEdit";
 
 function App() {
 
@@ -60,6 +61,7 @@ if(bookState===false || categoriesState.success === false)return null;
         <Route path="/book-edit/:bookId" element={<BookEdit/>}/>
         <Route path="/add" element={<AddBook/>} />
         <Route path="/cats" element={<Cats/>} />
+        <Route path="/cat-edit/:catId" element={<CatEdit/>}/>
         <Route path="/add-cat" element={<AddCat/>} />
         <Route path="*" element={<Error />} />
       </Routes>

@@ -1,41 +1,48 @@
 import React, { useState } from "react";
 import Header from "../components/header";
-import { useNavigate } from "react-router-dom";
-import { useSelector , useDispatch} from "react-redux";
-import urls from "../api/urls";
+
+import { useParams, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import api from "../api/api";
+import urls from "../api/urls";
 import actionTypes from "../redux/actions/actionTypes";
 
-export default function AddCat() {
-    const navi=useNavigate()
-    const dispatch=useDispatch()
-    const {categoriesState}=useSelector(state=>state)
-  const [form, setForm] = useState({
-    id: String(new Date().getTime()),
-    name: "",
-  });
+export default function CatEdit() {
+  const navi = useNavigate();
+  const params = useParams();
+  const dispatch = useDispatch();
+  const { categoriesState } = useSelector((state) => state);
+  const myCat = categoriesState.categories.find(
+    (cat) => cat.id === params.catId
+  );
+  console.log(myCat);
+  const [form, setForm] = useState(myCat);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    //validation
     if (form.name === "") {
-      alert("Name can not be empty");
+      alert("Can not be empty");
       return;
     }
 
-   const newCat=categoriesState.categories.find(cat=>cat.name.toLowerCase()===form.name.toLowerCase())
-   if(newCat!==undefined){ alert("There is already one the same"); return}
-   api.post(urls.categories,form)
-   .then((res)=>{
-    dispatch({type:actionTypes.categoryActions.ADD_CAT,payload:form})
-    navi("/cats")
-   })
-   
-   .catch((err)=>{})
-
+    api
+      .put(`${urls.categories}/${params.catId}`, form)
+      .then((res) => {
+        dispatch({
+          type: actionTypes.categoryActions.EDIT_CAT,
+          payload: form,
+        });
+        navi("/cats");
+      })
+      .catch((err) => {});
   };
 
   return (
     <div>
       <Header />
+
       <div className="container my-5">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">

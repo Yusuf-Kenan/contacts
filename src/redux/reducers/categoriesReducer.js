@@ -33,6 +33,12 @@ const categoryReducer = (state = initialState, action) => {
         error: action.payload,
       };
 
+      case actionTypes.categoryActions.ADD_CAT:
+        return{
+          ...state,
+          categories:[...state.categories, action.payload],
+        }
+
     default:
       return state;
   }

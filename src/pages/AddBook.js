@@ -7,7 +7,7 @@ import api from "../api/api";
 import actionTypes from "../redux/actions/actionTypes";
 
 export default function AddBook() {
-    const navi=useNavigate()
+  const navi = useNavigate();
   const dispatch = useDispatch();
   const { categoriesState } = useSelector((state) => state);
 
@@ -42,7 +42,7 @@ export default function AddBook() {
           type: actionTypes.bookActions.ADD_BOOK,
           payload: form,
         });
-        navi("/")
+        navi("/");
       })
       .catch((err) => {});
   };
@@ -135,7 +135,7 @@ export default function AddBook() {
           <div className="input-group">
             <label className="input-group-text">Categoris</label>
             <select
-           //defaultValue={categoriesState.categories[0].id}
+              //defaultValue={categoriesState.categories[0].id}
               className="form-select"
               value={form.catId}
               onChange={(event) =>

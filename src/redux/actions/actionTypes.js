@@ -16,7 +16,13 @@ const actionTypes={
     categoryActions:{
         GET_CAT_START:"GET_CAT_START",
         GET_CAT_SUCCESS:"GET_CAT_SUCCESS",
-        GET_CAT_FAIL:"GET_CAT_FAIL"
+        GET_CAT_FAIL:"GET_CAT_FAIL",
+
+        //ADD CAT
+        ADD_CAT:"ADD_CAT",
+
+        //EDIT CAT
+        EDIT_CAT:"EDIT_CAT"
     }
 }
 

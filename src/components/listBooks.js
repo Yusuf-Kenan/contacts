@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import api from "../api/api";
@@ -14,13 +14,14 @@ export default function ListBooks() {
   const { bookState, categoriesState } = useSelector((state) => state);
   const [filteredBook, setFilteredBook] = useState(bookState.books);
 
-
-  useEffect(()=>{
-const temp=bookState.books.filter(book=>book.name.toLowerCase().includes(searchText.toLowerCase()) || book.auther.toLowerCase().includes(searchText.toLowerCase()))
-setFilteredBook(temp)
-  },[searchText])
-
-  
+  useEffect(() => {
+    const temp = bookState.books.filter(
+      (book) =>
+        book.name.toLowerCase().includes(searchText.toLowerCase()) ||
+        book.auther.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredBook(temp);
+  }, [searchText]);
 
   const deleteBook = (id) => {
     dispatch({ type: actionTypes.bookActions.DELETE_BOOK_START });
@@ -43,7 +44,13 @@ setFilteredBook(temp)
   return (
     <div className="container my-5">
       <div className=" d-flex justify-content-between">
-      <input className="form-control-sm" type="text" placeholder="Search" value={searchText} onChange={(event)=>setSearchText(event.target.value)}/>
+        <input
+          className="form-control-sm"
+          type="text"
+          placeholder="Search"
+          value={searchText}
+          onChange={(event) => setSearchText(event.target.value)}
+        />
         <Link className="p-3" to={"/add"}>
           Add Book
         </Link>

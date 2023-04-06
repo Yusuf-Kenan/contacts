@@ -13,6 +13,8 @@ import actionTypes from "./redux/actions/actionTypes";
 import BookDetail from "./pages/BookDetail";
 import AddBook from "./pages/AddBook";
 import BookEdit from "./pages/BookEdit";
+import Cats from "./pages/Cats";
+import AddCat from "./pages/AddCat";
 
 function App() {
 
@@ -57,6 +59,8 @@ if(bookState===false || categoriesState.success === false)return null;
         <Route path="/book-detail/:bookId" element={<BookDetail/>}/>
         <Route path="/book-edit/:bookId" element={<BookEdit/>}/>
         <Route path="/add" element={<AddBook/>} />
+        <Route path="/cats" element={<Cats/>} />
+        <Route path="/add-cat" element={<AddCat/>} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

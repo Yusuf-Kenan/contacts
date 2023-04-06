@@ -7,8 +7,9 @@ export default function Header() {
       <nav className="navbar navbar-expand-sm navbar-dark bg-primary">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            Books
+            <h1>Library</h1>
           </Link>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -23,8 +24,13 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active"  to="/">
-                  Book List
+                <Link className="nav-link active" to="/">
+                  Books
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/cats">
+                  Cats
                 </Link>
               </li>
             </ul>

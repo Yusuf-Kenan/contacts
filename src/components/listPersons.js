@@ -76,7 +76,7 @@ export default function Listpersons() {
                 <th scope="row">{index + 1}</th>
                 <td>{person.name}</td>
                 <td>{person.phone}</td>
-                <td>{theCat.name}</td>
+                <td>{theCat!==undefined?theCat.name : "None"}</td>
                 <td>
                   <div
                     className="btn-group"

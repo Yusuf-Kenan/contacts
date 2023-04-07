@@ -16,7 +16,7 @@
       "email": "yusuf@kenan.com",
       "birthplace": "Turkey",
       "birthyear": 1983,
-      "catId": "1680801665849"
+      "catId": "1680801613956"
     },
     {
       "id": "1680803838823",
@@ -40,10 +40,6 @@
     {
       "id": "1680801621358",
       "name": "Friends"
-    },
-    {
-      "id": "1680801665849",
-      "name": "Business"
     }
   ]
 }

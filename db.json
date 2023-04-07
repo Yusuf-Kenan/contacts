@@ -21,10 +21,10 @@
     {
       "id": "1680803838823",
       "name": "Ali Tektas",
-      "phone": "05555675432",
+      "phone": "05555675435",
       "email": "ali@tektas.com",
       "birthplace": "Turkey",
-      "birthyear": 1987,
+      "birthyear": 1983,
       "catId": "1680801621358"
     }
   ],
@@ -40,6 +40,10 @@
     {
       "id": "1680801621358",
       "name": "Friends"
+    },
+    {
+      "id": "1680880224524",
+      "name": "Business"
     }
   ]
 }

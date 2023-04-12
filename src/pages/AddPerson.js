@@ -137,13 +137,13 @@ export default function AddPerson() {
             <select
               //defaultValue={categoriesState.categories[0].id}
               className="form-select"
-              value={form.catId}
+              defaultValue={form.catId}
               onChange={(event) =>
-                setForm({ ...form, catId: event.target.value })
+                setForm({ ...form, catId: event.target.defaultValue })
               }
             >
               {categoriesState.categories.map((category) => (
-                <option key={category.id} value={category.id}>
+                <option key={category.id} defaultValue={category.id}>
                   {category.name}
                 </option>
               ))}
